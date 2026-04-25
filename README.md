@@ -8,7 +8,11 @@ A whitemod of [Cinzya/xbox-elite2-skin](https://github.com/Cinzya/xbox-elite2-sk
 
 ## How to use
 
-On gamepadviewer.com, paste the raw URL of `elite2.css` (hosted via GitHub Pages or similar) into the custom CSS field on the URL-generation dialog.
+On gamepadviewer.com, paste this into the custom CSS field on the URL-generation dialog:
+
+```
+https://brendanwelsh.github.io/Elite-Series-2-Whitemod/elite2.css
+```
 
 ## How the recolor works
 
