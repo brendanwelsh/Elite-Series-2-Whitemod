@@ -312,7 +312,9 @@ themselves are fairly self explanatory. */
   height: 135px;
   top: 224px;
   left: 230px;
-  background: url(elite2-assets/dpad.png);
+  /* No default background — directional variants below provide their own.
+     Upstream's unconditional dpad.png here rendered a stray floating d-pad
+     in non-fightstick mode. */
 }
 .fstick.up {
   background: url(elite2-assets/F-midtop.png);
