@@ -250,6 +250,10 @@ the CSS inline. */
   height: 132px;
   top: 192px;
   left: 74px;
+  /* dpad.png is a single 136x135 image of the whole d-pad (not a directional
+     sprite as the .face offsets below assume), so render it on the container
+     itself. The .face elements still drive press-state visuals on top. */
+  background: url(elite2-assets/dpad.png) no-repeat center;
 }
 .custom .face {
   /* background: url(elite2-assets/dpad.png); */
