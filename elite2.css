@@ -248,11 +248,14 @@ the CSS inline. */
   position: absolute;
   width: 140px;
   height: 132px;
-  top: 192px;
-  left: 74px;
+  /* Coords aligned to the d-pad cutout in base.png (center ~275,345).
+     Upstream's top:192/left:74 was wrong here — the d-pad bg was always
+     commented out upstream, so the misalignment never surfaced. */
+  top: 279px;
+  left: 205px;
   /* dpad.png is a single 136x135 image of the whole d-pad (not a directional
      sprite as the .face offsets below assume), so render it on the container
-     itself. The .face elements still drive press-state visuals on top. */
+     itself. */
   background: url(elite2-assets/dpad.png) no-repeat center;
 }
 .custom .face {
