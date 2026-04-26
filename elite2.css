@@ -256,8 +256,13 @@ the CSS inline. */
   background: url(elite2-assets/dpad.png) no-repeat center;
 }
 .custom .face {
-  /* background: url(elite2-assets/dpad.png); */
   position: absolute;
+  /* gamepadviewer's default stylesheet sets a background-image on .face that
+     covered the d-pad image set on the .dpad container, so the d-pad only
+     showed transient press-state slices. Force transparent so the container
+     image always renders. (No per-direction press feedback as a result.) */
+  background-image: none !important;
+  background-color: transparent !important;
 }
 .custom .face.up,
 .custom .face.down {
