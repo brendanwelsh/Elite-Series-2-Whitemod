@@ -57,8 +57,9 @@ Draw-Asset 'Y.png' (532+58) 75 59 59
 Draw-Asset 'Start.png' 327 138 38 36
 Draw-Asset 'Select.png' (327 + 157 - 36) 138 36 36
 
-# D-pad — .dpad: top=226, left=233, w=140 h=132. dpad.png is 136x135 centered.
-Draw-Asset 'dpad.png' (233 + (140 - 136) / 2) (226 + (132 - 135) / 2) 136 135
+# D-pad — .dpad: top=223, left=227, w=153 h=139 (matches cutout bbox).
+# dpad.png is 136x135 centered.
+Draw-Asset 'dpad.png' (227 + (153 - 136) / 2) (223 + (139 - 135) / 2) 136 135
 
 $g.Dispose()
 $canvas.Save($Out, [System.Drawing.Imaging.ImageFormat]::Png)

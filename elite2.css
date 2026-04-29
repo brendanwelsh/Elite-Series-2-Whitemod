@@ -246,15 +246,15 @@ the CSS inline. */
 /* Dpad possitioning and sizing */
 .custom .dpad {
   position: absolute;
-  width: 140px;
-  height: 132px;
-  /* Coords aligned to the d-pad cutout in base.png. Cutout bbox in the
-     image is (227,223)-(380,362), center (303, 292) — verified via
-     luminance scan (cutout interior reads L=255). Previous (275, 345)
-     was inside the cutout but offset toward its lower-left corner, so
-     the rendered dpad.png didn't sit symmetrically in the recess. */
-  top: 226px;
-  left: 233px;
+  /* Container sized + positioned to match the d-pad cutout's bbox in
+     base.png exactly: (227,223)-(380,362), 153x139, center (303, 292)
+     — verified via connected-white-region scan (cutout interior L=255).
+     Matching the bbox 1:1 lets .face children anchored to each edge
+     fall on the cardinal tick marks rather than 26px inside them. */
+  width: 153px;
+  height: 139px;
+  top: 223px;
+  left: 227px;
   /* dpad.png is a single 136x135 image of the whole d-pad (not a directional
      sprite as the .face offsets below assume), so render it on the container
      itself. */
@@ -279,24 +279,35 @@ the CSS inline. */
   width: 52px;
   height: 38px;
 }
+/* .face offsets are computed for the 153x139 container (matching the
+   cutout bbox). up/down are 38x52 horizontally centered: left =
+   (153-38)/2 = 57.5 → 58. left/right are 52x38 vertically centered:
+   top = (139-38)/2 = 50.5 → 51.
+
+   Each face is shifted by half its long-axis length so its CENTER
+   sits on the cardinal tick mark instead of 26px inside the cutout
+   edge — i.e. up/down get top:-26 / top:113, and left/right get
+   left:-26 / right:-26. The bbox extends past the container, which
+   absolute positioning allows. This puts press feedback exactly on
+   the tick marks (1:1). */
 .custom .face.up {
-  left: 50px;
-  top: 0;
+  left: 58px;
+  top: -26px;
   background-position: 92px 0px;
 }
 .custom .face.down {
-  left: 50px;
-  top: 79px;
+  left: 58px;
+  top: 113px;
   background-position: 131px 0;
 }
 .custom .face.left {
-  top: 47px;
-  left: 0;
+  top: 51px;
+  left: -26px;
   background-position: 0px 0;
 }
 .custom .face.right {
-  top: 47px;
-  right: 0px;
+  top: 51px;
+  right: -26px;
   background-position: 53px 0;
 }
 .custom .face.pressed {
