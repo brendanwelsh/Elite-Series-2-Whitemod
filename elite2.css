@@ -290,24 +290,28 @@ the CSS inline. */
    left:-26 / right:-26. The bbox extends past the container, which
    absolute positioning allows. This puts press feedback exactly on
    the tick marks (1:1). */
+/* Empirical 5px right-shift on every .face after testing on
+   gamepadviewer — press feedback was rendering 5px left of each
+   tick mark, so up/down move from left:58 → 63, .left moves from
+   left:-26 → -21, .right moves from right:-26 → -31. */
 .custom .face.up {
-  left: 58px;
+  left: 63px;
   top: -26px;
   background-position: 92px 0px;
 }
 .custom .face.down {
-  left: 58px;
+  left: 63px;
   top: 113px;
   background-position: 131px 0;
 }
 .custom .face.left {
   top: 51px;
-  left: -26px;
+  left: -21px;
   background-position: 0px 0;
 }
 .custom .face.right {
   top: 51px;
-  right: -26px;
+  right: -31px;
   background-position: 53px 0;
 }
 .custom .face.pressed {
