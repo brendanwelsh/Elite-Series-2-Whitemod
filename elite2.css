@@ -96,14 +96,30 @@ placement */
   /* background: url(elite2-assets/bumpers.png); */
 }
 
+/* Always-visible inputs (DS5-style): gamepadviewer's host stylesheet
+   sets opacity:0 on input elements at rest, so the original Cinzya
+   skin only revealed buttons via .pressed → opacity:1 (now commented
+   out below). Overriding to opacity:1 here keeps every face button,
+   bumper, trigger, stick, and start/back visible at all times so the
+   .pressed state is purely a highlight, not show-on-press. */
+.custom .button,
+.custom .bumper,
+.custom .trigger,
+.custom .stick,
+.custom .back,
+.custom .start {
+  opacity: 1 !important;
+}
+
 .custom .pressed {
-  /* The '.pressed' class is used for most buttons to signify they've been pressed */
-  /* opacity: 1; */
+  /* Highlight on press by inverting the button's colors. Black-on-white
+     becomes white-on-black, which reads clearly against the white body
+     without obscuring the button shape. */
   filter: invert(1);
 }
 .custom .bumper.pressed {
-  /* The '.pressed' class is used for most buttons to signify they've been pressed */
-  /* opacity: 1; */
+  /* Bumpers brighten on press rather than invert, so the bumper outline
+     stays consistent with the controller body color. */
   filter: brightness(2.5);
 }
 .custom .bumper.left {
